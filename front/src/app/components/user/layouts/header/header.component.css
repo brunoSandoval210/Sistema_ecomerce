@@ -1,0 +1,19 @@
+.container-links{
+    display: none;
+}
+.container-header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100vw;
+    background: #FFFFFF;
+}
+.container-icons{
+    display: flex;
+    align-items: center;
+    width: auto;
+    gap: 30px;
+}
+.menu-hamburguesa img{
+    width: 30px;
+}
