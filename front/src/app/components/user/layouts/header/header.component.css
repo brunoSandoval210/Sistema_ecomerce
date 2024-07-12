@@ -4,9 +4,16 @@
 .container-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 100px;
-    width: 100vw;
+    width: calc(100vw - 40px);
+    /* width: 100vw; */
     background: #FFFFFF;
+    margin: 0px 20px 0px 20px;
+    position: relative;
+}
+.menu-hamburguesa img{
+    width: 30px;
 }
 .container-icons{
     display: flex;
@@ -14,6 +21,34 @@
     width: auto;
     gap: 30px;
 }
-.menu-hamburguesa img{
+.container-icons a .icon-person{
+    width: 40px;
+    height: auto;
+}
+.container-icons a .icon-search{
+    width: 27px;
+    height: auto;
+}
+.container-icons a .icon-cart{
     width: 30px;
+    height: auto;
+}
+
+
+/* CSS para SliderComponent */
+.container-slider {
+    background: #E7F0DC;
+    width: 300px;
+    height: 100vh;
+    position: absolute; /* Posicionamiento absoluto para que se sobreponga */
+    top: 0; /* Alineado con la parte superior del viewport */
+    left: 0; /* Alineado con el lado izquierdo */
+    transform: translateX(-100%); /* Inicia fuera de la vista */
+    transition: transform 0.3s ease; /* Suaviza la transición de entrada */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+}
+
+/* CSS para mostrar el slider */
+.show-slider {
+    transform: translateX(0); /* Mueve el slider a la vista */
 }

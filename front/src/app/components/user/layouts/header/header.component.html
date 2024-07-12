@@ -1,13 +1,18 @@
 <div class="container-header">
-    <a class="menu-hamburguesa" href=""><img src="icons/menu.svg" alt="logo"></a>
+    <a class="menu-hamburguesa" href="" (click)="toggleSlider(); $event.preventDefault()">
+        <img src="icons/menu.svg" alt="logo">
+    </a>
     <div class="container-links">
         <a href="">hombre</a>
         <a href="">mujer</a>
         <a href="">sale</a>
     </div>
     <div class="container-icons">
-        <a href=""><img src="icons/person.svg" alt=""></a>
-        <a href=""><img src="icons/search.svg" alt=""></a>
-        <a href=""><img src="icons/cart.svg" alt=""></a>
+        <a href=""><img class="icon-person" src="icons/person.svg" alt=""></a>
+        <a href=""><img class="icon-search" src="icons/search.svg" alt=""></a>
+        <a href=""><img class="icon-cart" src="icons/cart.svg" alt=""></a>
     </div>
 </div>  
+<div [ngClass]="{'show-slider': showSlider}" class="container-slider" *ngIf="showSlider">
+    <app-slider></app-slider>
+</div>
