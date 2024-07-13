@@ -32,8 +32,7 @@ export class CarrouselComponent implements OnInit/*OnDestroy*/ {
   carrousels: Carrousel[] = [];
 
   constructor(private carrouselService: CarrouselService) {}
-  // slides: any[] = new Array(3).fill({ id: -1, src: '', title: '', subtitle: '' });
-
+  
   ngOnInit(): void {
     this.carrousels = this.carrouselService.getCarrousel();
   }

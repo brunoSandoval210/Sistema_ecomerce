@@ -1,0 +1,44 @@
+.container-carrousel {
+    width: 100vw;
+    max-width: 926px;
+    margin: auto; /* Centra el carrusel horizontalmente */
+    overflow: hidden; /* Esconde cualquier desbordamiento, útil para bordes redondeados */
+  }
+  .c-carousel img {
+    width: 100vw;
+    height: 200px;
+  }
+  .c-carousel-control {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejor visibilidad */
+    color: white; /* Color de texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 50%; /* Botones circulares */
+    width: 40px; /* Tamaño fijo para los botones */
+    height: 40px; /* Altura igual al ancho para mantener la forma circular */
+    display: flex; /* Usando flex para centrar el contenido */
+    align-items: center; /* Centra verticalmente el contenido del botón */
+    justify-content: center; /* Centra horizontalmente el contenido del botón */
+    font-size: 20px; /* Tamaño del ícono o texto en el botón */
+  }
+  
+  .c-carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Más oscuro al pasar el mouse */
+  }
+  .c-carousel-indicators {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
+  .c-carousel-indicators .active {
+    background-color: #fff; /* Indicador activo en blanco */
+  }
+  
+  .c-carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Forma circular */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparente */
+    margin: 0 5px;
+  }
+  
