@@ -1,0 +1,9 @@
+<div class="carousel-container">
+  <button class="prev" (click)="previousImage()">❮</button>
+  <div class="carousel-slide" [style.width.px]="totalWidth" [style.transform]="'translateX(-' + currentIndex * 100 / carrousels.length + '%)'">
+    <div *ngFor="let item of carrousels">
+      <img [src]="item.img" [alt]="item.description" [style.width.px]="item.width">
+    </div>
+  </div>
+  <button class="next" (click)="nextImage()">❯</button>
+</div>
