@@ -15,30 +15,3 @@ export const routes: Routes = [
     ]
     }
 ];
-
-
-
-
-/*
-const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  {
-    path: '',
-    component: SkeletonComponent,
-    canActivate: [AuthGuard],
-    children: [
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'products', component: ProductsComponent },
-      // Otras rutas protegidas
-    ]
-  },
-  { path: '**', component: PageNotFoundComponent }
-];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
- */

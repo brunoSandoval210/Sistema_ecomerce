@@ -60,6 +60,9 @@
     .menu-hamburguesa {
         display: none;
     }
+    .container-slider{
+        display: none;
+    }
     .container-links{
         display: flex;
         flex-direction: row;
