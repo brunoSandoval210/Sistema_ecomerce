@@ -10,10 +10,10 @@ import { SliderComponent } from '../slider/slider.component';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  showSlider=false;
+  showSlider = false;
 
-  toggleSlider(){
+  toggleSlider() {
     this.showSlider = !this.showSlider;
-    console.log("Slider toggled, current state:", this.showSlider);
+    // console.log('showSlider:', this.showSlider);
   }
 }
