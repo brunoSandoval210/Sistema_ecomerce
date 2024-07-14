@@ -1,44 +1,54 @@
-.container-carrousel {
-    width: 100vw;
-    max-width: 926px;
-    margin: auto; /* Centra el carrusel horizontalmente */
-    overflow: hidden; /* Esconde cualquier desbordamiento, útil para bordes redondeados */
+.carrousel {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.img-carrousel {
+  width: 350px;
+  height: 200px;
+}
+
+.c-carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 12px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left-4 {
+  left: 5vw;
+}
+
+.right-4 {
+  right: 5vw;
+}
+
+@media (min-width: 500px) {
+  .img-carrousel {
+    width: 450px;
+    height: 300px;
   }
-  .c-carousel img {
-    width: 100vw;
-    height: 200px;
+}
+@media (min-width: 750px) {
+  .img-carrousel {
+    width: 600px;
+    height: 400px;
   }
-  .c-carousel-control {
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejor visibilidad */
-    color: white; /* Color de texto blanco */
-    border: none; /* Sin bordes */
-    border-radius: 50%; /* Botones circulares */
-    width: 40px; /* Tamaño fijo para los botones */
-    height: 40px; /* Altura igual al ancho para mantener la forma circular */
-    display: flex; /* Usando flex para centrar el contenido */
-    align-items: center; /* Centra verticalmente el contenido del botón */
-    justify-content: center; /* Centra horizontalmente el contenido del botón */
-    font-size: 20px; /* Tamaño del ícono o texto en el botón */
+}
+@media (min-width: 1025px) {
+  .img-carrousel {
+    width: 920px;
+    height: 550px;
   }
-  
-  .c-carousel-control:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Más oscuro al pasar el mouse */
-  }
-  .c-carousel-indicators {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-  }
-  
-  .c-carousel-indicators .active {
-    background-color: #fff; /* Indicador activo en blanco */
-  }
-  
-  .c-carousel-indicators li {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%; /* Forma circular */
-    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparente */
-    margin: 0 5px;
-  }
-  
+}
