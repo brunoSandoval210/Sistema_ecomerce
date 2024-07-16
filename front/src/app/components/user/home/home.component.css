@@ -3,7 +3,7 @@
     height: 100vh;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 .container-carrousel{
     width: 100vw;
