@@ -78,8 +78,8 @@
     .container-icons .search-content{
         display: flex;
         flex-direction: row-reverse;
-        gap: 40px;
-        border-bottom: #587445 1px solid;
+        gap: 19px;
+        border-bottom: #587445 2px solid;
     }
     .container-icons input{
         font-size: 20px;
@@ -97,8 +97,8 @@
         margin: 0px 30px 0px 30px;
     }
     .container-icons input{
-        font-size: 30px;
-        width: 230px;
+        font-size: 20px;
+        width: 170px;
     }
     .container-links{
         gap: 40px;
