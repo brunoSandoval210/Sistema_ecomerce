@@ -5,14 +5,14 @@
 .container-close{
     display: flex;
     justify-content: flex-end;
-    padding: 20px;
+    padding: 40px;
 }
 .container-close button{
     border: none;
     background: none;
 }
 .container-close button img{
-    width: 50px;
+    width: 20px;
 }
 .container-links{
     display: flex;
