@@ -15,10 +15,8 @@
         </div>
     
         <button (click)="togglePopup()" class="relative">
-
             <img src="icons/person.svg" alt="icono de persona" class="icon-person">
-
-            <div id="popup" [ngClass]="{'hidden': !showPopup}" class="absolute top-full right-0 text-green-dark bg-white border-green-dark roudend shadow-lg p-4 mt-2 w-72">
+            <div id="popup" [ngClass]="{'hidden': !showPopup}" class="absolute top-full right-0 text-green-dark bg-white border-green-dark rounded shadow-lg p-4 mt-2 w-72 z-50">
                 <h2 class="text-lg font-semibold mb-4">Seleccione una opción</h2>
                 <button class="w-full mb-4 py-2 bg-green-dark text-white rounded-md">Recibir código de acceso por e-mail</button>
                 <button class="w-full py-2 bg-green-dark text-white rounded-md">Entrar con e-mail y contraseña</button>
@@ -30,7 +28,7 @@
 
 
 
-        <button><a href=""><img class="icon-cart" src="icons/cart.svg" alt=""></a></button>
+        <button><a href="#"><img class="icon-cart" src="icons/cart.svg" alt="" (click)="preventDefault($event)"></a></button>
     </div>
 </div>
 <div [ngClass]="{'show-slider': showSlider}" class="container-slider" *ngIf="showSlider">

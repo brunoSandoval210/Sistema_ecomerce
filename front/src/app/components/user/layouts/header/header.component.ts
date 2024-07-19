@@ -21,4 +21,10 @@ export class HeaderComponent {
   togglePopup() {
     this.showPopup = !this.showPopup;
   }
+
+preventDefault(event: Event) {
+  event.preventDefault();
+
+}
+
 }
