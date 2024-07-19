@@ -11,14 +11,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2vw;
+}
+.container-carrousel-sale{
+    width: 100%;
+    height: 410px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E7F0DC;
 }
 @media (min-width: 750px) {
     .container-carrousel{
         height: 50vh;
     }
+    .container-carrousel-sale{
+        height: 40vh;
+    }
 }
 @media (min-width: 1025px) {
     .container-carrousel{
         height: 60vh;
+    }
+    .container-carrousel-sale{
+        height: 35vh;
     }
 }

@@ -4,14 +4,14 @@ export const carrouselData:Carrousel[]=[
     {
         id:1,
         src:'img/carrousel.png',
-        title:'Carousel 1',
-        subtitle:'Subtitle 1'
+        title:'Temporda invierno 2024',
+        subtitle:'Obten un 20% de descuento en tu compra'
     },
     {
         id:2,
         src:'img/carrousel1.png',
-        title:'Carousel 2',
-        subtitle:'Subtitle 2'
+        title:'Temporada invierno 2023',
+        subtitle:'Obten un 20% de descuento en tu compra'
     }
       
 ]
