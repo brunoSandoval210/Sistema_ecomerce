@@ -1,17 +1,18 @@
-<div class="carrousel" >
-  <c-carousel>
-    <c-carousel-indicators></c-carousel-indicators>
+  <c-carousel [interval]=0>
     <c-carousel-inner>
       <c-carousel-item *ngFor="let slide of carrousels">
         <img
-          class="img-carrousel"
           alt="{{slide.title}}"
           loading="lazy"
           src="{{slide.src}}"
         />
+        <c-carousel-caption>
+          <h3>{{slide.title}}</h3>
+          <p>{{slide.subtitle}}</p>
+        </c-carousel-caption>
       </c-carousel-item>
+      <c-carousel-control [routerLink] caption="Previous" direction="prev" class="left-4 c-carousel-control">❮</c-carousel-control>
+      <c-carousel-control [routerLink] caption="Next" direction="next" class="right-4 c-carousel-control">❯</c-carousel-control>
+      <!-- <c-carousel-indicators></c-carousel-indicators> -->
     </c-carousel-inner>
-    <c-carousel-control [routerLink] caption="Previous" direction="prev" class="left-4 c-carousel-control">❮</c-carousel-control>
-    <c-carousel-control [routerLink] caption="Next" direction="next" class="right-4 c-carousel-control">❯</c-carousel-control>
   </c-carousel>
-</div>

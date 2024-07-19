@@ -6,8 +6,11 @@
     flex-direction: column;
 }
 .container-carrousel{
-    width: 100vw;
+    width: 100%;
     height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @media (min-width: 750px) {
     .container-carrousel{
