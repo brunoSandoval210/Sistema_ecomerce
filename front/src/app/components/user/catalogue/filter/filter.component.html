@@ -1,0 +1,26 @@
+<div class="ml-14 mt-5" >
+    <div class="filter ">
+
+        <h3 class="text-green-dark">FILTER</h3>
+        <div class="filter-section mt-6">
+          <h4 class="text-green-dark mb-2">PRICE</h4>
+          <div *ngFor="let price of prices">
+            <input type="checkbox">{{ price }}
+          </div>
+        </div>
+
+        <div class="filter-section mt-6">
+          <h4 class="text-green-dark mb-2">SIZE</h4>
+          <div *ngFor="let size of sizes" >
+            <input type="checkbox">{{ size }}
+          </div>
+        </div>
+
+        <div class="filter-section mt-6">
+          <h4 class="text-green-dark mb-2">COLORS</h4>
+          <div *ngFor="let color of colors" class="mt-2">
+            <input type="checkbox">{{ color }}
+          </div>
+        </div>
+      </div>
+</div>
