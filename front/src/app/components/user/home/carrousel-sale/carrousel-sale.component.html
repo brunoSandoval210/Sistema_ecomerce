@@ -1,15 +1,16 @@
 <div class="carrousel-sale">
     <h1>Sale por temporada</h1>
     <div class="container-cards">
-        <ng-container *ngFor="let card of cards; let i = index">
-            <div *ngIf="i === currentCardIndex" class="container-card">
-                <div class="card">
-                    <h1>{{ card.text1 }}</h1>
-                    <p class="tipo-genero">{{ card.text2 }}<span>{{ card.text3 }}</span></p>
-                    <p class="numero">{{ card.discount }}<span>% Dscto.</span></p>
-                </div>
-                <img src="{{ card.src }}" alt="" class="img-card">
-            </div>
-        </ng-container>
+      <ng-container *ngFor="let card of visibleCards">
+        <div class="container-card">
+          <div class="card">
+            <h1>{{ card.text1 }}</h1>
+            <p class="tipo-genero">{{ card.text2 }}<span>{{ card.text3 }}</span></p>
+            <p class="numero">{{ card.discount }}<span>% Dscto.</span></p>
+          </div>
+          <img src="{{ card.src }}" alt="" class="img-card">
+        </div>
+      </ng-container>
     </div>
-</div>
+  </div>
+  

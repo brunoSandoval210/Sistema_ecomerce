@@ -32,5 +32,13 @@ export const cardData:Card[]=[
         text2:'Polos',
         text3:'Hombre',
         discount:20
+    },
+    {
+        id:5,
+        src:'img-card/Jeans-Azul1-removebg-preview.png',
+        text1:'Liquidacion',
+        text2:'Polos',
+        text3:'Hombre',
+        discount:20
     }
 ]
