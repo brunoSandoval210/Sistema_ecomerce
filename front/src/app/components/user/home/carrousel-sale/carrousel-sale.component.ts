@@ -1,35 +1,36 @@
-import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import {
-  CarouselComponent,
-  CarouselControlComponent,
-  CarouselIndicatorsComponent,
-  CarouselInnerComponent,
-  CarouselItemComponent,
-  ThemeDirective
-} from '@coreui/angular';
+import { CommonModule } from '@angular/common';
+import { CardService } from '../../../../service/card.service';
+import { Card } from '../../../../models/home/card';
 
 @Component({
   selector: 'app-carrousel-sale',
   standalone: true,
-  imports: [ThemeDirective, CarouselComponent, CarouselIndicatorsComponent, CarouselInnerComponent, NgFor, CarouselItemComponent, CarouselControlComponent, RouterLink],
+  imports: [CommonModule],
   templateUrl: './carrousel-sale.component.html',
-  styleUrl: './carrousel-sale.component.css'
-  
+  styleUrls: ['./carrousel-sale.component.css']
 })
 export class CarrouselSaleComponent implements OnInit {
+  cards: Card[] = [];
+  currentCardIndex = 0;
+  intervalId: any;
 
-  constructor() { }
-  slides: any[] = new Array(3).fill({ id: -1, src: '', title: '', subtitle: '' });
+  constructor(private cardService: CardService) { }
 
   ngOnInit(): void {
-    this.slides[0] = {
-      src: 'img/carrousel.png'
-    };
-    this.slides[1] = {
-      src: 'img/carrousel1.png'
-    };
+    this.cards = this.cardService.getCard();
+    this.startAutoChange();
   }
 
+  ngOnDestroy(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  startAutoChange(): void {
+    this.intervalId = setInterval(() => {
+      this.currentCardIndex = (this.currentCardIndex + 1) % this.cards.length;
+    }, 3000);
+  }
 }

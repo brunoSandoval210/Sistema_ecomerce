@@ -11,10 +11,14 @@
     font-size: 45px;
     text-align: center;
     text-transform: uppercase;
-    margin: 20px 0px 10px 0px;
+    margin: 0px 0px 0px 0px;
 }
 .container-cards{
-
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
 }
 .container-card{
     width: 295px;
@@ -26,6 +30,7 @@
     justify-content: space-evenly;
     border-radius: 15px;
     gap: 20px;
+    transition: transform 0.5s ease-in-out;
 }
 .card{
     display: flex;
@@ -36,7 +41,6 @@
     height: 175px;
     border-radius: 20px;
     border: 1px solid black;
-    /* margin: 20px 10px 20px 10px; */
 }
 .card h1{
     font-size: 15px;
@@ -55,7 +59,7 @@
     margin-top: -6px;
 }
 .card .numero{
-    width: 63px;
+    width: 75px;
     height: 85px;  
     font-size: 60px;
     display: flex;
