@@ -18,35 +18,42 @@ export class CarrouselSaleComponent implements OnInit, OnDestroy {
   intervalId: any;
   constructor(private cardService: CardService) {}
 
+  //Funcion para inicializar las cards con los datos del servicio y llamar a las funciones de cambio de cards
   ngOnInit(): void {
     this.cards = this.cardService.getCard();
     this.updateVisibleCards();
     this.startAutoChange();
   }
 
+  //Funcion para detener el cambio de cards automatico
   ngOnDestroy(): void {
     clearInterval(this.intervalId);
   }
 
+  //Funcion para cambiar las cards manualmente
   @HostListener('window:resize', ['$event'])
   onResize(event:Event): void {
     this.updateVisibleCards();
   }
 
+  //Funcion para cambiar las cards automaticamente
   startAutoChange(): void {
     this.intervalId = setInterval(() => {
       this.currentCardIndex = (this.currentCardIndex + 1) % this.cards.length;
       this.updateVisibleCards();
-    }, 3000);
+    }, 2000);
   }
 
+  //Muestra las cards segun el tamaño de la pantalla
   updateVisibleCards(): void {
     const width = window.innerWidth;
-    if(width >=1300){
+    if (width>=1650){
+      this.numVisibleCards = 5;
+    } else if(width >=1300){
       this.numVisibleCards = 4;
     } else if (width >= 1025) {
       this.numVisibleCards = 3;
-    } else if (width >= 750) {
+    } else if (width >= 650) {
       this.numVisibleCards = 2;
     } else {
       this.numVisibleCards = 1;

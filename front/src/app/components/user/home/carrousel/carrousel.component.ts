@@ -34,6 +34,7 @@ export class CarrouselComponent implements OnInit/*OnDestroy*/ {
 
   constructor(private carrouselService: CarrouselService) {}
   
+  //Funcion para inicializar las cards con los datos del servicio
   ngOnInit(): void {
     this.carrousels = this.carrouselService.getCarrousel();
   }

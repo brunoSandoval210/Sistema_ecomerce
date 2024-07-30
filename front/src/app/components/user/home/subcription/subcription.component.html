@@ -1,1 +1,28 @@
-<p>subcription works!</p>
+<div class="subcription">
+    <div class="card-subcription">
+        <h2 class="title-subcription">Suscríbete y recibe un 20% de dscto.</h2>
+        <form [formGroup]="subscribeForm" (ngSubmit)="onSubmit($event)" class="form">
+        <div class="container-inputs">
+            <label for="email" class="inputs-title">Email</label>
+            <input type="email" id="email" formControlName="email" class="input-text">
+        </div>
+        <fieldset class="container-input-2">
+            <legend class="inputs-title">Género</legend>
+            <label class="inputs-title"><input type="radio" formControlName="gender" value="Masculino"> Masculino</label>
+            <label class="inputs-title"><input type="radio" formControlName="gender" value="Femenino"> Femenino</label>
+            <label class="inputs-title"><input type="radio" formControlName="gender" value="Otros"> Otros</label>
+        </fieldset>
+        <div class="container-inputs">
+            <label for="dob" class="inputs-title">Fecha de nacimiento</label>
+            <input type="date" id="dob" formControlName="dob" class="input-text">
+        </div>
+        <div class="container-input-2">
+            <label class="inputs-title">
+                <input type="checkbox" formControlName="dataAuthorization">
+                Autorización de uso de datos personales
+            </label>
+        </div>
+        <button type="submit" class="input-submit">SUSCRIBIRME</button>
+        </form>
+    </div>
+  </div>
