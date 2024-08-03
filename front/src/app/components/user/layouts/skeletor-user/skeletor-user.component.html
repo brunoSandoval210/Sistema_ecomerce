@@ -3,6 +3,7 @@
     [showSlider]="showSlider"
     (showPopupEventEmitter)="togglePopup()"
     (showSliderEventEmitter)="toggleSlider()"
+    (loginEventEmitter)="SubmitLogin($event)"
 ></app-header>
 
 <div class="slider-container" [ngClass]="{'open': showSlider}">

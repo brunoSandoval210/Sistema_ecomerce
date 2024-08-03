@@ -36,6 +36,5 @@ export class HomeComponent implements OnInit{
   //Recibe los datos del formulario de suscripción.
   submitForm(data:any): void {
     this.inputForm=data;
-    console.log(this.inputForm);
   }
 }
