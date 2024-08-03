@@ -1,6 +1,5 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardService } from '../../../../service/card.service';
 import { Card } from '../../../../models/home/card';
 
 @Component({
@@ -11,16 +10,13 @@ import { Card } from '../../../../models/home/card';
   styleUrls: ['./carrousel-sale.component.css']
 })
 export class CarrouselSaleComponent implements OnInit, OnDestroy {
-  cards: Card[] = [];
   visibleCards: Card[] = [];
   currentCardIndex = 0;
   numVisibleCards = 1;
   intervalId: any;
-  constructor(private cardService: CardService) {}
-
-  //Funcion para inicializar las cards con los datos del servicio y llamar a las funciones de cambio de cards
+  @Input() cards:Card[] = [];
+  
   ngOnInit(): void {
-    this.cards = this.cardService.getCard();
     this.updateVisibleCards();
     this.startAutoChange();
   }

@@ -1,8 +1,5 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit,OnDestroy, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { CarrouselService } from '../../../../service/carrousel.service';
-import { Carrousel } from '../../../../models/home/corrousel';
 import { RouterLink } from '@angular/router';
 import { CarouselCaptionComponent,
          CarouselComponent,
@@ -12,6 +9,7 @@ import { CarouselCaptionComponent,
          CarouselItemComponent,
          ThemeDirective
  } from '@coreui/angular';
+import { Carrousel } from '../../../../models/home/corrousel';
 @Component({
   selector: 'app-carrousel',
   standalone: true,
@@ -29,13 +27,9 @@ import { CarouselCaptionComponent,
   templateUrl: './carrousel.component.html',
   styleUrl: './carrousel.component.css'
 })
-export class CarrouselComponent implements OnInit/*OnDestroy*/ {
-  carrousels: Carrousel[] = [];
-
-  constructor(private carrouselService: CarrouselService) {}
-  
-  //Funcion para inicializar las cards con los datos del servicio
+export class CarrouselComponent implements OnInit {
+  @Input() carrousels:Carrousel[]=[];
   ngOnInit(): void {
-    this.carrousels = this.carrouselService.getCarrousel();
   }
+
 }

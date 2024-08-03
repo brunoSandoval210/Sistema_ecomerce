@@ -1,4 +1,4 @@
-import { Component,Output,EventEmitter } from '@angular/core';
+import { Component,Output,EventEmitter, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-slider',
@@ -8,9 +8,12 @@ import { RouterLink } from '@angular/router';
   styleUrl: './slider.component.css'
 })
 export class SliderComponent {
-  @Output() closeSlider = new EventEmitter<void>();
-  
-  onClose() {
-    this.closeSlider.emit();
+  //Recibir el valor de showSlider desde el componente padre
+  @Input() showSlider:boolean=false;
+  //Emitir el valor de showSlider al componente padre
+  @Output() showSliderEventEmitter:EventEmitter<boolean> = new EventEmitter<boolean>();
+  //Cambiar el valor de showSlider a true o false
+  onClose():void{
+    this.showSliderEventEmitter.emit(!this.showSlider);
   }
 }
