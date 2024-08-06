@@ -1,6 +1,7 @@
   <c-carousel>
     <c-carousel-inner>
-      <c-carousel-item *ngFor="let slide of carrousels">
+      @for (slide of carrousels; track $index) {
+      <c-carousel-item>
         <img
           alt="{{slide.title}}"
           loading="lazy"
@@ -11,6 +12,7 @@
           <p>{{slide.subtitle}}</p>
         </c-carousel-caption>
       </c-carousel-item>
+    }
       <c-carousel-control [routerLink] caption="Previous" direction="prev" class="left-4 c-carousel-control">❮</c-carousel-control>
       <c-carousel-control [routerLink] caption="Next" direction="next" class="right-4 c-carousel-control">❯</c-carousel-control>
       <!-- <c-carousel-indicators></c-carousel-indicators> -->

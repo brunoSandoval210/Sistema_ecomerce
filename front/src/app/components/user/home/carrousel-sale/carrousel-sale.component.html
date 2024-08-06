@@ -1,7 +1,8 @@
 <div class="carrousel-sale">
-    <h1>Sale por temporada</h1>
+    <h1 >Sale por temporada</h1>
     <div class="container-cards">
-      <ng-container *ngFor="let card of visibleCards">
+      @for (card of visibleCards; track $index) {
+      <ng-container>
         <div class="container-card">
           <div class="card">
             <h1>{{ card.text1 }}</h1>
@@ -11,6 +12,7 @@
           <img src="{{ card.src }}" alt="" class="img-card">
         </div>
       </ng-container>
+    }
     </div>
   </div>
   

@@ -1,11 +1,14 @@
 <div class="container-body">
     <div class="container-carrousel">
-        <app-carrousel></app-carrousel>
+        <app-carrousel
+        [carrousels]="carrousels"></app-carrousel>
     </div>
     <div class="container-carrousel-sale">
-        <app-carrousel-sale></app-carrousel-sale>
+        <app-carrousel-sale
+        [cards]="cards"></app-carrousel-sale>
     </div>
     <div class="container-subcription">
-        <app-subcription></app-subcription>
+        <app-subcription
+        (inputFormEventEmitter)="submitForm($event)"></app-subcription>
     </div>
 </div>

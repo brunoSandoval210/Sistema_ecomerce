@@ -1,0 +1,6 @@
+<h2 class="text-lg font-semibold mb-4">Inicia Sesison</h2> 
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input type="text" class="w-full border py-2 border-bg-green-dark-300 rounded-md" placeholder="Ingresa tu email" formControlName="email">
+    <input type="password" class="w-full py-2 border border-bg-green-dark-300 rounded-md my-3" placeholder="Ingresa tu contraseña" formControlName="password">
+    <button type="submit" class="w-full mb-4 py-2 bg-green-dark text-white rounded-md">Ingresar</button>
+</form>

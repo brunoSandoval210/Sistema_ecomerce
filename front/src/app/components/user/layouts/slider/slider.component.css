@@ -1,6 +1,8 @@
 .container-content-slider{
     display: flex;
     flex-direction: column;
+    position: sticky;
+    background: #E7F0DC;
 }
 .container-close{
     display: flex;

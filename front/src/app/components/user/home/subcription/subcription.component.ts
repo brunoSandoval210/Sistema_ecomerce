@@ -1,7 +1,6 @@
-import { Component,OnInit } from '@angular/core';
-import { FormBuilder,FormGroup } from '@angular/forms';
+import { Component,EventEmitter, Output } from '@angular/core';
+import { FormBuilder,FormGroup,FormsModule,Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
 
 @Component({
   selector: 'app-subcription',
@@ -10,22 +9,22 @@ import { ReactiveFormsModule } from '@angular/forms';
   templateUrl: './subcription.component.html',
   styleUrl: './subcription.component.css'
 })
-export class SubcriptionComponent implements OnInit {
-  subscribeForm: FormGroup = new FormGroup({});
+export class SubcriptionComponent {
 
-  constructor(private fb: FormBuilder) {}
+  @Output() inputFormEventEmitter:EventEmitter<any>=new EventEmitter<any>();
 
-  ngOnInit(): void {
-    this.subscribeForm = this.fb.group({
+  subscriptionForm:FormGroup;
+  constructor(private fb:FormBuilder){
+    this.subscriptionForm=this.fb.group({
       email: [''],
       gender: [''],
       dob: [''],
       dataAuthorization: [false]
-    });
+    })
   }
 
-  onSubmit(event: Event): void {
-    event.preventDefault();
-    console.log(this.subscribeForm.value);
+  //Envía los datos del formulario de suscripción al componente padre.
+  onSubmit(): void {
+    this.inputFormEventEmitter.emit(this.subscriptionForm.value);
   }
 }

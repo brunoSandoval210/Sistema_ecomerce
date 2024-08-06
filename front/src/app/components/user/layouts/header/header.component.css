@@ -1,7 +1,3 @@
-.container-links{
-    display: none;
-    
-}
 
 .container-header {
     display: flex;
@@ -21,6 +17,10 @@
 .menu-hamburguesa img{
     width: 30px;
 }
+.container-links{
+    display: none;
+    
+}
 .container-icons{
     display: flex;
     align-items: center;
@@ -39,30 +39,8 @@
     height: auto;
 }
 
-
-/* CSS para SliderComponent */
-.container-slider {
-    background: #E7F0DC;
-    width: 300px;
-    height: 100vh;
-    position: absolute; /* Posicionamiento absoluto para que se sobreponga */
-    top: 0; /* Alineado con la parte superior del viewport */
-    left: 0; /* Alineado con el lado izquierdo */
-    transform: translateX(-100%); /* Inicia fuera de la vista */
-    transition: transform 0.3s ease; /* Suaviza la transición de entrada */
-    z-index: 1000; /* Asegura que esté sobre otros elementos */
-}
-
-/* CSS para mostrar el slider */
-.show-slider {
-    transform: translateX(0); /* Mueve el slider a la vista */
-}
-
 @media screen and (min-width: 700px) {
     .menu-hamburguesa {
-        display: none;
-    }
-    .container-slider{
         display: none;
     }
     .container-links{
