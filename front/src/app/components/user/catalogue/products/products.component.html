@@ -1,4 +1,21 @@
-<div class="container mx-auto px-4 py-6 flex lg:justify-end md:justify-center sm:justify-center justify-center mt-7">
+
+
+
+  
+
+
+<div class="container mx-auto px-4 py-6 flex lg:justify-center md:justify-center sm:justify-center justify-center mt-7">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div *ngFor="let product of products; trackBy: trackByFn">
+      <app-cart-products [product]="product" (productEventEmitter)="onAddCart($event)"></app-cart-products>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 
+<div class="container mx-auto px-4 py-6 flex lg:justify-center md:justify-center sm:justify-center justify-center mt-7">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 ">
     <div *ngFor="let product of products; trackBy: trackByFn" class="overflow-hidden mb-16">
       <div class="block w-full text-left">
@@ -11,4 +28,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

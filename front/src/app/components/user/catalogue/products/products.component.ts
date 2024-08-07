@@ -1,26 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductService } from '../../../../service/product.service';
 import { Product } from '../../../../models/product';
+import { CartProductsComponent } from '../cart-products/cart-products.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CartProductsComponent],
   templateUrl: './products.component.html',
-  styleUrl: './products.component.css'
+  styleUrls: ['./products.component.css'] // Asegúrate de que el nombre es correcto: styleUrls
 })
 export class ProductsComponent implements OnInit {
+  @Input() products!: Product[];
 
-  products: Product[] = [];
+  ngOnInit(): void {}
 
-  constructor(private service: ProductService) { }
-
-  ngOnInit(): void {
-    this.products = this.service.findAll();
+  trackByFn(index: number, item: Product): number {
+    return item.id; // Suponiendo que cada producto tiene una propiedad `id`
   }
 
-  trackByFn(index: number, item: Product) {
-    return index; // o return item.id si cada producto tiene un ID único
+  @Output() productEventEmitter: EventEmitter<Product> = new EventEmitter();
+  onAddCart(product: Product) {
+    this.productEventEmitter.emit(product);
   }
+  
 }

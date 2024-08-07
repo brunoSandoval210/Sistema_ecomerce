@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../../../service/product.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../../../../models/product';
 
 @Component({
@@ -7,15 +6,16 @@ import { Product } from '../../../../models/product';
   standalone: true,
   imports: [],
   templateUrl: './cart-products.component.html',
-  styleUrl: './cart-products.component.css'
+  styleUrls: ['./cart-products.component.css'] 
 })
-export class CartProductsComponent implements OnInit {
+export class CartProductsComponent{
+  @Input() product!: Product;
 
-  products: Product[]=[];
-   constructor(private service: ProductService){
 
-   }
-  ngOnInit(): void {
-   this.products = this.service.findAll();
+  @Output() productEventEmitter: EventEmitter<Product> = new EventEmitter();
+  onAddCart(product: Product) {
+
+    this.productEventEmitter.emit(product);
   }
+  
 }
