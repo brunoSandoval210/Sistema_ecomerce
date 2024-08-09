@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { SliderComponent } from '../slider/slider.component';
 import { User } from '../../../../models/users/user';
 import { UserService } from '../../../../service/user.service';
+
 @Component({
   selector: 'app-skeletor-user',
   standalone: true,
@@ -23,7 +24,9 @@ export class SkeletorUserComponent implements OnInit{
   showLoginMessage: boolean = false;
   loginMessage: string = '';
 
-  constructor(private userService:UserService){
+  constructor(
+    private userService:UserService
+  ){
   }
   //Se inicializa la variable users con los usuarios que se encuentran en el servicio
   ngOnInit(): void {

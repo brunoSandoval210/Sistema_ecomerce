@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LoginModalComponent } from '../../../popups/login-modal/login-modal.component';
+import { SharingDataService } from '../../../../service/sharing-data.service';
 
 @Component({
   selector: 'app-header',
@@ -21,6 +22,9 @@ export class HeaderComponent {
   @Output() showPopupEventEmitter:EventEmitter<boolean>=new EventEmitter<boolean>();
   //Emitir el valor de login al componente padre
   @Output() loginEventEmitter:EventEmitter<any>=new EventEmitter<any>();
+  constructor(private sharingDataService:SharingDataService){
+
+  }
   //Cambiar el valor de showPopup a true o false
   togglePopupHandler():void{
     this.showPopupEventEmitter.emit();
@@ -35,7 +39,10 @@ export class HeaderComponent {
   SubmitLogin(login:any):void{
     this.loginEventEmitter.emit(login);
   }
-  preventClose(event: Event) {
+  preventClose(event: Event):void {
     event.stopPropagation();
+  }
+  handlerCategorySex(selectedCategorySex:string):void{
+    this.sharingDataService.categorySexEventEmitter.emit(selectedCategorySex);
   }
 }

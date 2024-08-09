@@ -26,7 +26,7 @@ export class CatalogueComponent implements OnInit {
   constructor(private service: ProductService) {}
 
   ngOnInit(): void {
-    this.products = this.service.findAll();
+    this.products = this.service.findAllByCategorySex();
   }
 
   onAddCart(product:Product) {
